@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <PackageId>Solari.Sdk</PackageId>
+    <Title>Solari .NET SDK (unofficial)</Title>
+    <Description>Unofficial C#/.NET client for Solari (https://getsolari.com) - cloud browsers, code sandboxes, and desktop VMs behind one API key. Solari does not ship an official .NET SDK; this wraps the REST API directly.</Description>
+    <Authors>Community contribution</Authors>
+    <PackageTags>solari;browser-automation;sandbox;ai-agents;playwright;cdp</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/solari-sdk/solari-cookbook</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Pulls in Microsoft.Extensions.DependencyInjection.Abstractions and
+      Microsoft.Extensions.Http from the shared framework (already on any
+      machine with the ASP.NET Core runtime/SDK installed) instead of a
+      NuGet package reference, so this library has zero external NuGet
+      dependencies of its own.
+    -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
